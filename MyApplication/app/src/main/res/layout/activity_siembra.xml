@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Siembra">
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="284dp"
+        android:layout_height="69dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
+        app:srcCompat="@drawable/coopevictoria"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button5"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="2dp"
+        android:text="Siembra:"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="180dp"
+        tools:layout_editor_absoluteY="93dp"
+        tools:text="Siembra:" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="170dp"
+        android:text="Metodo de siembra:"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="151dp"
+        tools:text="Metodo de siembra:" />
+
+    <Spinner
+        android:id="@+id/spinner_metodos"
+        android:layout_width="188dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="171dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <Spinner
+        android:id="@+id/spinner_metodos2"
+        android:layout_width="189dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="270dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView23"
+        android:layout_alignTop="@+id/textView25"
+        android:text="Distancia de siembra:"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="218dp"
+        tools:text="Distancia de siembra:" />
+
+    <EditText
+        android:id="@+id/editText10"
+        android:layout_width="63dp"
+        android:layout_height="41dp"
+        android:layout_alignEnd="@+id/button5"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="334dp"
+        android:layout_marginEnd="-44dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="321dp"
+        android:layout_marginLeft="321dp"
+        android:layout_marginTop="221dp"
+        android:text="metros"
+        tools:layout_editor_absoluteX="306dp"
+        tools:layout_editor_absoluteY="218dp"
+        tools:text="metros" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView29"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-4dp"
+        android:layout_marginTop="281dp"
+        android:text="Fertilización:"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="280dp"
+        tools:text="Fertilización:" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView24"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="353dp"
+        android:layout_marginEnd="26dp"
+        android:text="Dosis fertilizante:"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="347dp"
+        tools:text="Dosis fertilizante:" />
+
+    <EditText
+        android:id="@+id/editText12"
+        android:layout_width="52dp"
+        android:layout_height="32dp"
+        android:layout_alignEnd="@+id/textView24"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="214dp"
+        android:layout_marginEnd="-128dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="333dp" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="31dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="339dp"
+        android:layout_marginEnd="-112dp"
+        android:layout_toStartOf="@+id/editText13"
+        android:text="ha"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="265dp"
+        tools:layout_editor_absoluteY="333dp"
+        tools:text="ha" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="418dp"
+        android:layout_marginEnd="193dp"
+        android:text="Gasto por tonelada semilla:"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="407dp"
+        tools:text="Gasto por tonelada semilla:" />
+
+    <EditText
+        android:id="@+id/editText13"
+        android:layout_width="135dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="413dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginRight="41dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="243dp"
+        tools:layout_editor_absoluteY="394dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-4dp"
+        android:layout_marginBottom="80dp"
+        android:layout_toStartOf="@+id/editText12"
+        android:text="Finalizar"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="494dp"
+        tools:text="Finalizar" />
+
+</RelativeLayout>
