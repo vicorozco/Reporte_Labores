@@ -2,6 +2,7 @@ package com.example.admin.myapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +22,7 @@ import android.widget.TextView;
 import static android.R.layout.simple_spinner_item;
 
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity {
 
 
     private static final String ODBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
@@ -64,6 +65,11 @@ public class MainActivity extends AppCompatActivity  {
              dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
              fincas.setAdapter(dataAdapter);
 
+        try {
+            conexion.CerrarConexion();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         cargarEncargados();
 
 }
@@ -77,37 +83,45 @@ public class MainActivity extends AppCompatActivity  {
         //StrictMode.setThreadPolicy(policy);
         final Spinner labores = (Spinner) findViewById(R.id.spinner_labores);
         // Spinner lotes = (Spinner) findViewById(R.id.spinner_lotes);
-        lista_labores.add("Siembra");
-        lista_labores.add("Control de plagas");
-        lista_labores.add("Control de maleza");
-        lista_labores.add("Enmiendas");
-        lista_labores.add("Fertilización");
+        Conexion conexion = new Conexion("10.11.2.1","firevic", USER_NAME,USER_PASS);
+        try {
+            lista_labores = conexion.obtener_labores();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        lista_labores.add("CONTROL MALEZAS");
+        lista_labores.add("ENMIENDA");
         ArrayAdapter<String> laboresAdapter = new ArrayAdapter<String>(this, simple_spinner_item,lista_labores);
         laboresAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         labores.setAdapter(laboresAdapter);
         Button button = (Button) findViewById(R.id.button);
+        try {
+            conexion.CerrarConexion();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-         button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                if(labores.getSelectedItem().toString().equals("Enmiendas")) {
+                if(labores.getSelectedItem().toString().equals("ENMIENDA")) {
                     Intent enmienda = new Intent(getApplicationContext(), enmienda.class);
                     lista_labores.clear();
                     startActivity(enmienda);
-                } else if(labores.getSelectedItem().toString().equals("Siembra")) {
+                } else if(labores.getSelectedItem().toString().equals("SIEMBRA")) {
                     Intent siembra = new Intent(getApplicationContext(), Siembra.class);
                     lista_labores.clear();
                     startActivity(siembra);
-                } else if(labores.getSelectedItem().toString().equals("Control de plagas")){
+                } else if(labores.getSelectedItem().toString().equals("CONTROL PLAGAS")){
                     Intent control_plagas = new Intent(getApplicationContext(), Control_Plagas.class);
                     lista_labores.clear();
                     startActivity(control_plagas);
-                } else if(labores.getSelectedItem().toString().equals("Control de maleza")){
+                } else if(labores.getSelectedItem().toString().equals("CONTROL MALEZAS")){
                     Intent control_maleza = new Intent(getApplicationContext(),control_malezas.class);
                     lista_labores.clear();
                     startActivity(control_maleza);
-                } else if (labores.getSelectedItem().toString().equals("Fertilización")) {
+                } else if (labores.getSelectedItem().toString().equals("FERTILIZACION")) {
                     Intent fertilizacion = new Intent(getApplicationContext(), fertlizacion.class);
                     lista_labores.clear();
                     startActivity(fertilizacion);
@@ -135,7 +149,19 @@ public class MainActivity extends AppCompatActivity  {
         dataAdapter = new ArrayAdapter<Cuadrilla>(this, simple_spinner_item, (List<Cuadrilla>) lista_cuadrillas);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         encargados.setAdapter(dataAdapter);
-
+        try {
+            conexion.CerrarConexion();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
+    public class AsynTask extends AsyncTask {
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            return null;
+        }
     }
+
+}
+

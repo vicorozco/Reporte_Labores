@@ -150,6 +150,33 @@ public class Conexion {
         }
         return cuadrillas;
     }
+    public List<String> obtener_labores() throws SQLException {
+        List<String> labores = new ArrayList<>();
+        Statement stmt = null;
+        String query = "select * from agm_tlabo";
+
+
+        try {
+
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+
+            StrictMode.setThreadPolicy(policy);
+            stmt = conexion.createStatement();
+            ResultSet rs = null;
+
+            rs = stmt.executeQuery(query);
+
+            while (rs.next()) {
+                labores.add(rs.getString("DE_LABOR"));
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+
+        }
+        return labores;
+    }
 
     public Connection getConexion() {
         return conexion;
