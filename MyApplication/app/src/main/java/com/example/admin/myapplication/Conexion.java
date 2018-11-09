@@ -93,7 +93,7 @@ public class Conexion {
     }
 
 
-    public List<Lote> obtener_lotes(String co_clien) throws SQLException {
+    public List<Lote> obtener_lotes(String[] co_clien) throws SQLException {
         List<Lote> lotes = new ArrayList<>();
         Statement stmt = null;
         String query = "select * from agm_lotes where no_clien =" + co_clien;

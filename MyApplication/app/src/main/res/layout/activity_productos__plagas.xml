@@ -8,21 +8,6 @@
     android:id="@+id/relativeLayout">
 
     <EditText
-        android:id="@+id/editText23"
-
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/spinner_producto1"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="228dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
-        android:ems="10"
-        android:inputType="number" />
-
-    <EditText
         android:id="@+id/editText24"
         android:layout_width="52dp"
         android:layout_height="33dp"
@@ -169,19 +154,19 @@
         tools:layout_editor_absoluteY="151dp" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button7"
+        android:layout_alignTop="@+id/add"
         android:layout_alignEnd="@+id/textView36"
         android:layout_marginEnd="18dp"
-        android:text="Finalizar"
+        android:text="Continuar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button7"
+        app:layout_constraintEnd_toStartOf="@+id/add"
         app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_producto5"
-        tools:text="Finalizar" />
+        tools:text="Continuar" />
 
     <TextView
         android:id="@+id/textView12"
@@ -246,7 +231,7 @@
         android:inputType="number" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/add"
         android:layout_width="57dp"
         android:layout_height="45dp"
         android:layout_alignParentEnd="true"

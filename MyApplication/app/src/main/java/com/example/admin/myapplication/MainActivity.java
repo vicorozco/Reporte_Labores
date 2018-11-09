@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String URL = "jdbc:oracle:thin:agric";
     private static final String USER_NAME = "agric";
     private static final String USER_PASS = "agric";
-    private List<Lote> lista_lotes;
+    private List<Lote> lista_lotes = new ArrayList<>();
     private List<Finca> lista_fincas;
     private List<Cuadrilla> lista_cuadrillas;
     private List<String> lista_labores = new ArrayList<>() ;
@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         }
         cargarEncargados();
 
+     
 }
 
     @Override
@@ -129,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
 
@@ -156,10 +158,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public class AsynTask extends AsyncTask {
+    public class AsynTask extends AsyncTask<String,Integer, Integer> {
+
         @Override
-        protected Object doInBackground(Object[] objects) {
-            return null;
+        protected Integer doInBackground(String... strings) {
+            Spinner lotes = (Spinner) findViewById(R.id.spinner_lotes);
+            Conexion conexion = new Conexion("10.11.2.1","firevic", USER_NAME,USER_PASS);
+            try {
+                lista_lotes = conexion.obtener_lotes(strings);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            ArrayAdapter<Lote> dataAdapter = new ArrayAdapter<Lote>(getApplicationContext(),simple_spinner_item, lista_lotes);
+            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            lotes.setAdapter(dataAdapter);
+            try {
+                conexion.CerrarConexion();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return 1;
         }
     }
 

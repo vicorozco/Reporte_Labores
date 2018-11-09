@@ -13,6 +13,7 @@ public class Control_Plagas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control__plagas);
         Button button = (Button) findViewById(R.id.button);
+        Button add = (Button) findViewById(R.id.add);
 
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -20,6 +21,17 @@ public class Control_Plagas extends AppCompatActivity {
             public void onClick(View v) {
             Intent productos = new Intent(getApplicationContext(),Productos_Plagas.class);
             startActivity(productos);
+            }
+        });
+
+        add.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //Guardar datos de las plagas aquí
+              finish();
+              Intent agregar_Plagas = new Intent(getApplicationContext(),Control_Plagas.class);
+              startActivity(agregar_Plagas);
             }
         });
     }

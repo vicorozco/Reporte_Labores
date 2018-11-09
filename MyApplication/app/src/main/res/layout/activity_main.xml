@@ -15,8 +15,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginRight="34dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
         app:srcCompat="@drawable/coopevictoria"
         tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="0dp" />
@@ -28,9 +28,9 @@
         android:layout_alignTop="@+id/spinner_labores"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="37dp"
-        android:layout_marginLeft="37dp"
-        android:layout_marginTop="-9dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="-8dp"
         android:text="Labor:"
         android:textSize="17sp"
         android:visibility="visible"
@@ -45,9 +45,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="95dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginRight="29dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
         android:visibility="visible"
         tools:layout_editor_absoluteX="97dp"
         tools:layout_editor_absoluteY="103dp" />
@@ -92,7 +92,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginStart="34dp"
         android:layout_marginLeft="34dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="121dp"
         android:text="Lot:"
         android:textSize="17sp"
         android:visibility="visible"
@@ -121,8 +121,8 @@
         android:layout_alignTop="@+id/spinner_labores"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="38dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="34dp"
         android:layout_marginTop="190dp"
         android:text="Área trabajada:"
         android:textSize="17sp"
@@ -133,12 +133,12 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="140dp"
-        android:layout_height="35dp"
+        android:layout_width="60dp"
+        android:layout_height="33dp"
         android:layout_alignTop="@+id/textView5"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="37dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="145dp"
         android:ems="10"
         android:inputType="number" />
 
@@ -149,9 +149,9 @@
         android:layout_alignTop="@+id/spinner_labores"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="261dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="265dp"
         android:text="Fecha:"
         android:textSize="17sp"
         android:visibility="visible"
@@ -166,9 +166,9 @@
         android:layout_alignTop="@+id/spinner_labores"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="325dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="326dp"
         android:text="Encargado:"
         android:textSize="17sp"
         android:visibility="visible"
@@ -183,7 +183,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="418dp"
+        android:layout_marginTop="425dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:visibility="visible"
@@ -197,7 +197,10 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/editText"
         android:layout_alignBottom="@+id/textView6"
+        android:layout_marginEnd="-47dp"
+        android:layout_marginBottom="-4dp"
         android:ems="10"
+        android:hint="DD/MM/AAAA"
         android:inputType="date" />
 
     <Button
@@ -206,11 +209,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp"
         android:text="Continuar"
         tools:text="Continuar" />
 
-
-
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="28dp"
+        android:layout_height="33dp"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_marginEnd="38dp"
+        android:text="ha" />
 
 
 </RelativeLayout>
