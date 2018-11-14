@@ -58,12 +58,6 @@ public class Enfermedad {
 
     @Override
     public String toString() {
-        return "Enfermedad{" +
-                "co_enferm='" + co_enferm + '\'' +
-                ", de_enferm='" + de_enferm + '\'' +
-                ", in_enferm='" + in_enferm + '\'' +
-                ", de_comun='" + de_comun + '\'' +
-                ", co_cultivo='" + co_cultivo + '\'' +
-                '}';
+        return de_comun;
     }
 }

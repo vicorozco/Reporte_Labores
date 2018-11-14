@@ -30,19 +30,6 @@
             tools:layout_editor_absoluteY="0dp" />
 
         <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="125dp"
-            android:layout_marginTop="72dp"
-            android:text="Control de Plagas"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:text="Control de Plagas" />
-
-        <TextView
             android:id="@+id/textViewPlaga1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -259,10 +246,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="67dp"
         android:text="Control de Plagas"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         tools:text="Control de Plagas" />
 

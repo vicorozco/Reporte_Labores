@@ -207,12 +207,11 @@ public class Conexion {
         return muestras;
     }
 
-
     public List<Enfermedad> obtener_plagas() throws SQLException {
         List<Enfermedad> plagas = new ArrayList<>();
         Statement stmt = null;
-        String query = "select *  from agm_enfer where  (co_cultiv=01 OR co_cultiv =02 ) AND  (in_enferm= E OR in_enferm= P) order by de_comun";
-
+        String query = "select *  from agm_enfer where  (co_cultiv=01 OR co_cultiv =02 ) AND  (in_enferm= 'E' OR in_enferm= 'P') order by de_comun";
+        System.out.println("Ee");
 
         try {
 
@@ -227,6 +226,37 @@ public class Conexion {
             while (rs.next()) {
                 plagas.add(new Enfermedad(rs.getString("CO_ENFERM"),rs.getString("DE_ENFERM"),rs.getString("IN_ENFERM"),
                 rs.getString("DE_COMUN"),rs.getString("CO_CULTIV")));
+            System.out.println("Enfer: " +  rs.getString("DE_COMUN"));
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+
+        }
+        return plagas;
+    }
+
+    public List<Enfermedad> obtener_metodo() throws SQLException {
+        List<Enfermedad> plagas = new ArrayList<>();
+        Statement stmt = null;
+        String query = "select *  from agm_enfer where  (co_cultiv=01 OR co_cultiv =02 ) AND  (in_enferm= 'E' OR in_enferm= 'P') order by de_comun";
+        System.out.println("Ee");
+
+        try {
+
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+
+            StrictMode.setThreadPolicy(policy);
+            stmt = conexion.createStatement();
+            ResultSet rs = null;
+
+            rs = stmt.executeQuery(query);
+
+            while (rs.next()) {
+                plagas.add(new Enfermedad(rs.getString("CO_ENFERM"),rs.getString("DE_ENFERM"),rs.getString("IN_ENFERM"),
+                        rs.getString("DE_COMUN"),rs.getString("CO_CULTIV")));
+                System.out.println("Enfer: " +  rs.getString("DE_COMUN"));
             }
 
         } catch (SQLException e) {
