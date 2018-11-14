@@ -150,6 +150,7 @@ public class Conexion {
         }
         return cuadrillas;
     }
+
     public List<String> obtener_labores() throws SQLException {
         List<String> labores = new ArrayList<>();
         Statement stmt = null;
@@ -176,6 +177,64 @@ public class Conexion {
 
         }
         return labores;
+    }
+
+    public List<Muestra> obtener_muestras() throws SQLException {
+        List<Muestra> muestras = new ArrayList<>();
+        Statement stmt = null;
+        String query = "select * from agm_muest";
+
+
+        try {
+
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+
+            StrictMode.setThreadPolicy(policy);
+            stmt = conexion.createStatement();
+            ResultSet rs = null;
+
+            rs = stmt.executeQuery(query);
+
+            while (rs.next()) {
+                muestras.add(new Muestra(rs.getString("CO_MUEST"),rs.getString("DE_MUEST")));
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+
+        }
+        return muestras;
+    }
+
+
+    public List<Enfermedad> obtener_plagas() throws SQLException {
+        List<Enfermedad> plagas = new ArrayList<>();
+        Statement stmt = null;
+        String query = "select *  from agm_enfer where  (co_cultiv=01 OR co_cultiv =02 ) AND  (in_enferm= E OR in_enferm= P) order by de_comun";
+
+
+        try {
+
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+
+            StrictMode.setThreadPolicy(policy);
+            stmt = conexion.createStatement();
+            ResultSet rs = null;
+
+            rs = stmt.executeQuery(query);
+
+            while (rs.next()) {
+                plagas.add(new Enfermedad(rs.getString("CO_ENFERM"),rs.getString("DE_ENFERM"),rs.getString("IN_ENFERM"),
+                rs.getString("DE_COMUN"),rs.getString("CO_CULTIV")));
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+
+        }
+        return plagas;
     }
 
     public Connection getConexion() {
