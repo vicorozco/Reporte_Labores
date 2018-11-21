@@ -72,7 +72,7 @@
         android:inputType="number" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/cortador1"
         android:layout_width="205dp"
         android:layout_height="36dp"
         android:layout_alignParentStart="true"

@@ -6,10 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,10 +31,15 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
+        numCarretas();
 
     }
 
+    /**
+     * Metodo que permite enviar un correo con la informacion del despacho de caña
+     *
+     * @param mensaje
+     */
     public void  enviarEmail(String mensaje){
 
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
@@ -49,4 +59,32 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    /**
+     * Método para agregar los números de carreras en los spinner
+     */
+    private void numCarretas() {
+        Spinner numCarreta1 = (Spinner) findViewById(R.id.spinner1);
+        Spinner numCarreta2 = (Spinner) findViewById(R.id.spinner2);
+        Spinner numCarreta3 = (Spinner) findViewById(R.id.spinner3);
+        Spinner numCarreta4 = (Spinner) findViewById(R.id.spinner4);
+        Spinner numCarreta5 = (Spinner) findViewById(R.id.spinner5);
+
+        List<Integer> numCarretas = new ArrayList<>();
+        numCarretas.add(1);
+        numCarretas.add(2);
+        numCarretas.add(3);
+        numCarretas.add(4);
+        numCarretas.add(5);
+
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this,android.R.layout.simple_spinner_item, (List<Integer>) numCarretas);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        numCarreta1.setAdapter(adapter);
+        numCarreta2.setAdapter(adapter);
+        numCarreta3.setAdapter(adapter);
+        numCarreta4.setAdapter(adapter);
+        numCarreta5.setAdapter(adapter);
+    }
+
+
 }
